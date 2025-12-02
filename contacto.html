@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Hablemos de tus Redes Sociales</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">🚀 Conecta+</a>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="servicios.html">Nuestros Servicios</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="aviso-privacidad.html" class="btn-secondary">Aviso de Privacidad</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="contacto" class="section bg-light">
+        <div class="container">
+            <h3 class="text-center">Estamos Listos para Impulsar tu Marca</h3>
+            <p class="subtitle text-center">D&eacute;janos tus datos y un experto se pondr&aacute; en contacto contigo en menos de 24 horas.</p>
+
+            <form id="contactForm" class="contact-form">
+                <input type="text" name="nombre" placeholder="Nombre Completo" required>
+                <input type="email" name="email" placeholder="Correo Electr&oacute;nico" required>
+                <input type="tel" name="telefono" placeholder="Tel&eacute;fono" required>
+                <select name="interes" required>
+                    <option value="" disabled selected>Estoy interesado en...</option>
+                    <option value="Basico">Plan B&aacute;sico (Starter)</option>
+                    <option value="Crecimiento">Plan Crecimiento (Growth)</option>
+                    <option value="Elite">Plan &Eacute;lite (Premium)</option>
+                    <option value="Asesoria">Asesor&iacute;a General</option>
+                </select>
+                <textarea name="mensaje" placeholder="Describe brevemente tus necesidades..." rows="4" required></textarea>
+                
+                <label class="privacy-checkbox">
+                    <input type="checkbox" name="acepto_privacidad" required>
+                    Acepto el <a href="aviso-privacidad.html" target="_blank">Aviso de Privacidad</a>.
+                </label>
+
+                <button type="submit" class="btn-primary">Solicitar Asesor&iacute;a Gratuita</button>
+                <p id="formMessage" style="margin-top: 15px; text-align: center; font-weight: bold;"></p>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Detiene el envío real del formulario
+
+            const form = event.target;
+            
+            const messageElement = document.getElementById('formMessage');
+            messageElement.style.color = '#27ae60'; // Verde
+            messageElement.textContent = "✅ ¡Tu mensaje ha sido enviado con &eacute;xito! Nos pondremos en contacto contigo pronto.";
+            
+            form.reset(); // Limpia el formulario después de la simulación
+        });
+    </script>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Conecta+. Todos los derechos reservados.</p>
+            <p>
+                <a href="aviso-privacidad.html">Aviso de Privacidad</a> |
+                <a href="contacto.html">Contacto</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

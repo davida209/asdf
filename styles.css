@@ -1,0 +1,443 @@
+/*================================
+   1. VARIABLES Y RESET GENERAL
+==================================*/
+:root {
+    --primary-color: #3b5998; /* Azul profesional, tipo redes sociales */
+    --secondary-color: #00bcd4; /* Azul cian vibrante para destacar */
+    --text-color-dark: #2c3e50; /* Gris oscuro para el cuerpo del texto */
+    --text-color-light: #ecf0f1; /* Gris claro para fondos oscuros */
+    --bg-light: #f4f7f6;
+    --bg-dark: #2c3e50;
+    --shadow-base: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Usaremos Inter de Google Fonts */
+    line-height: 1.6;
+    color: var(--text-color-dark);
+    background-color: #fff;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/*================================
+   2. TIPOGRAFÍA Y ESTRUCTURA
+==================================*/
+h1, h2, h3, h4 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; text-align: center; margin-bottom: 40px; color: var(--text-color-dark);}
+
+.text-center { text-align: center; }
+.subtitle {
+    font-size: 1.1em;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light); 
+}
+
+/*================================
+   3. BOTONES (CTA)
+==================================*/
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px; /* Bordes redondeados para un look moderno */
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color); /* Color vibrante */
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.large {
+    font-size: 1.2em;
+    padding: 15px 40px;
+}
+
+/*================================
+   4. NAVEGACIÓN (NAVBAR)
+==================================*/
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 900;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: var(--text-color-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+/*================================
+   5. HERO SECTION
+==================================*/
+.hero {
+    /* RUTA DE IMAGEN EN LÍNEA: Escritorio con iconos de redes */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+    color: var(--text-color-light);
+    padding: 150px 0;
+    text-align: center;
+}
+
+.hero h1 { 
+    font-size: 3.5em; 
+    color: #fff; 
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+/*================================
+   6. SECCIÓN 1: BENEFICIOS
+==================================*/
+.benefits-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.benefit-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: var(--shadow-base);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-card h4 {
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+/*================================
+   7. SECCIÓN 2: PILARES
+==================================*/
+.pills-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pill {
+    max-width: 350px;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: var(--shadow-base);
+}
+
+.pill-number {
+    font-size: 2.5em;
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+/*================================
+   8. PLANES DE PRECIOS
+==================================*/
+.pricing-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.plan-card {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-base);
+    text-align: center;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.plan-card.featured {
+    border: 4px solid var(--secondary-color); 
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.plan-card h4 {
+    color: var(--text-color-dark);
+    font-size: 1.5em;
+}
+
+.price {
+    font-size: 3em;
+    color: var(--secondary-color);
+    margin: 15px 0;
+    font-weight: 900;
+}
+
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+    text-align: left;
+    width: 100%;
+    font-size: 0.95em;
+}
+
+.plan-card ul li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    align-items: center;
+}
+.plan-card ul li i.icon {
+    color: #27ae60; /* Verde para checks */
+    margin-right: 10px;
+    font-weight: 700;
+}
+.plan-card ul li.disabled i.icon {
+    color: #e74c3c; /* Rojo para X */
+}
+
+/*================================
+   9. CONTACTO Y CTA INTERMEDIA
+==================================*/
+.cta-section {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 60px 0;
+}
+.cta-section h3 {
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: var(--shadow-base);
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+.privacy-checkbox {
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.9em;
+    color: #666;
+}
+.privacy-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 3px;
+    width: auto;
+}
+
+/*================================
+   10. PÁGINAS GENERALES Y FOOTER
+==================================*/
+.page-header {
+    background-color: var(--bg-light); 
+    padding: 80px 0;
+    text-align: center;
+}
+.page-header h1 {
+    color: var(--primary-color);
+}
+.page-header p {
+    color: #666;
+}
+
+.privacy-content {
+    padding: 40px 0;
+    text-align: left;
+}
+.privacy-content h4 {
+    color: var(--primary-color);
+    margin-top: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+footer {
+    background-color: var(--bg-dark);
+    color: var(--text-color-light);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/*================================
+   11. RESPONSIVIDAD (MOBILE FIRST)
+==================================*/
+@media (max-width: 900px) {
+    .container {
+        padding: 20px;
+    }
+    .nav-links a {
+        margin-left: 15px;
+    }
+    .hero {
+        padding: 100px 0;
+    }
+    .hero h1 { 
+        font-size: 2.5em; 
+    }
+    .section {
+        padding: 50px 0;
+    }
+    .benefits-grid, .pricing-grid, .pills-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    .benefit-card, .plan-card, .pill {
+        width: 100%;
+        max-width: 450px;
+    }
+    .plan-card.featured {
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 600px) {
+    /* Ocultar el link del botón de privacidad en el menú de navegación para ahorrar espacio */
+    .nav-links a.btn-secondary {
+        display: none; 
+    }
+    .nav-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-links a {
+        margin: 5px 10px;
+    }
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.5em; }
+}
